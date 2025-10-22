@@ -55,3 +55,86 @@ SomoLink’s architecture is built around four intelligent layers:
 
 ## 🧩 Repository Structure
 
+
+Detailed breakdown in [`docs/architecture/overview.md`](docs/architecture/overview.md)
+
+---
+
+## 🔍 Key Components
+
+| Component | Function | Location |
+|------------|-----------|----------|
+| **somolink-edge** | Edge agent for caching, telemetry, and safe-browsing | `/edge/agent` |
+| **somolink-ai** | ML models: solar forecasting, QoS optimization, anomaly detection | `/ai/` |
+| **somolink-dashboard** | School & community dashboards (Next.js) | `/apps/dashboard-school`, `/apps/dashboard-community` |
+| **somolink-backend** | REST & gRPC APIs, billing, telemetry ingest | `/services/` |
+| **somolink-infra** | Terraform, Kubernetes, and monitoring | `/infra/` |
+
+---
+
+## 🧱 Tech Stack Summary
+
+| Domain | Tools |
+|--------|-------|
+| **Languages** | Python, Go, TypeScript, SQL |
+| **AI/ML** | PyTorch, LightGBM, MLflow, ONNX Runtime |
+| **Databases** | PostgreSQL, TimescaleDB, ClickHouse |
+| **Message/Telemetry** | Kafka, MQTT, OpenTelemetry |
+| **Frontend** | React, Next.js, Tailwind, Recharts |
+| **Infrastructure** | Docker, Kubernetes, Terraform, Prometheus, Grafana |
+| **Edge OS** | Ubuntu Core / Yocto Linux |
+| **DevOps** | GitHub Actions, ArgoCD, Helm, Pre-commit |
+
+---
+
+## 🔒 Data Ethics & Privacy
+
+- No personally identifiable information (PII) is stored.  
+- Federated learning ensures local model training without data exposure.  
+- All analytics are aggregated and anonymized before reporting.  
+- Open **model cards** and **datasheets** document every AI component.
+
+---
+
+## 📈 Roadmap
+
+| Phase | Duration | Objectives |
+|--------|-----------|------------|
+| **Phase 1** | Months 1–3 | Stabilize edge agent, deploy first 10 school pilots, launch dashboards. |
+| **Phase 2** | Months 4–8 | Integrate federated learning, add gamified learning content, and expand to 25 schools. |
+| **Phase 3** | Months 9–12 | Release open API, scale to 50 schools + 20 community hubs, and publish open-source toolkit. |
+
+---
+
+## 🤝 Contributors
+
+| Name | Role | Focus Area |
+|------|------|-------------|
+| **Brill Okoth Owino** | CEO & Lead Engineer | Systems architecture & strategic direction |
+| **Ian Gitonga** | UI/UX & API Integrations | Frontend and workflow logic |
+| **Emmanuel Kibet** | AI/LLM Development | Machine learning & model integration |
+| **Chrispine Owuor** | Backend & Database Engineer | Core API & data infrastructure |
+
+---
+
+## 🧾 License
+
+This project is released under the **apache License**.  
+See [LICENSE](LICENSE) for details.
+
+---
+
+## 📬 Contact
+
+**Wekkitech Limited**  
+📍 Nakuru, Kenya  
+🌐 [wekkitech.net](https://wekkitech.net)  
+📧 info@wekkitech.net  
+🖇 [LinkedIn](https://linkedin.com/company/wekkitech)
+
+---
+
+> *“SomoLink transforms connectivity into a living, intelligent network — built for equity, powered by AI, and sustained by communities.”*
+
+
+
