@@ -1,0 +1,53 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.inputWrapper {
+  width: 360px;
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  border: 1px solid #bcbcbc;
+  border-radius: 20px;
+  background: white;
+}
+
+.iconArea {
+  font-size: 2.2rem;
+  color: #4e4e4e;
+  margin-right: 0.6rem;
+}
+
+.divider {
+  width: 1px;
+  height: 22px;
+  background: #cfcfcf;
+  margin-right: 0.6rem;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.connectBtn {
+  background: #71e675;
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+}

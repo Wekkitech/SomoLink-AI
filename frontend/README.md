@@ -1,1 +1,1 @@
-
+Somolink frontend directory.

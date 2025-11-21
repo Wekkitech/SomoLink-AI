@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100 percent;
+  padding: 1rem;
+}
+
+.topBar {
+  width: 100 percent;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.centerContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer {
+  width: 100 percent;
+  text-align: center;
+  margin-top: auto;
+  padding-bottom: 0.5rem;
+}

@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito Sans", system-ui, Arial;
+  background-color: rgb(245, 246, 250);
+  color: rgb(40, 40, 40);
+  line-height: 1.45;
+}
+
+html,
+body {
+  height: 95vh;
+  overflow-y: auto;
+}
+
+/* Container system for mobile first */
+.container {
+  width: 100;
+  max-width: 480px;
+  margin: 0 auto;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+.fullwidth {
+  width: 100;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Spacing utilities */
+.space-xs {
+  margin-bottom: 0.25rem;
+}
+.space-sm {
+  margin-bottom: 0.5rem;
+}
+.space-md {
+  margin-bottom: 0.75rem;
+}
+.space-lg {
+  margin-bottom: 1rem;
+}
+.space-xl {
+  margin-bottom: 1.5rem;
+}
+.space-xxl {
+  margin-bottom: 2rem;
+}
+
+/* Vertical Padding (top & bottom) */
+
+.pad-vertical-xs {
+  padding: 0.25rem 0;
+}
+.pad-vertical-sm {
+  padding: 0.5rem 0;
+}
+.pad-vertical-md {
+  padding: 0.75rem 0;
+}
+.pad-vertical-lg {
+  padding: 1rem 0;
+}
+.pad-vertical-xl {
+  padding: 1.5rem 0;
+}
+
+/* Horizontal Padding (left & right) */
+.pad-horizontal-xs {
+  padding: 0 0.25rem;
+}
+.pad-horizontal-sm {
+  padding: 0 0.5rem;
+}
+.pad-horizontal-md {
+  padding: 0 0.75rem;
+}
+.pad-horizontal-lg {
+  padding: 0 1rem;
+}
+.pad-horizontal-xl {
+  padding: 0 1.5rem;
+}
+
+/* Typography scale */
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 0.95rem;
+}
+
+small {
+  font-size: 0.8rem;
+}
+
+button {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+:root {
+  /* brand colors */
+  --brand-blue: rgb(32, 95, 255);
+  --brand-yellow: rgb(253, 203, 36);
+
+  /* neutrals */
+  --grey-50: rgb(248, 248, 248);
+  --grey-100: rgb(235, 235, 235);
+  --grey-200: rgb(220, 220, 220);
+  --grey-300: rgb(200, 200, 200);
+  --grey-600: rgb(100, 100, 100);
+
+  /* success, warning, danger */
+  --success: rgb(34, 197, 94);
+  --warning: rgb(245, 158, 11);
+  --danger: rgb(239, 68, 68);
+}
+
+/* Breakpoints  */
+@media (min-width: 640px) {
+  .container {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 960px) {
+  .container {
+    max-width: 820px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1080px;
+  }
+}
