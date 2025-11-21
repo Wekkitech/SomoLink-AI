@@ -9,12 +9,15 @@
   justify-content: space-between;
   gap: 1rem;
 }
+
+
 .topLink {
   background: transparent;
   border: none;
   color: #1d4ed8;
   cursor: pointer;
   font-weight: 600;
+  white-space: nowrap;
 }
 .form {
   display: flex;

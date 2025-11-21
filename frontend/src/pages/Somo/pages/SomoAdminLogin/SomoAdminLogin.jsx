@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { SuccessToast, ErrorToast } from "@/pages/Somo/components";
 import { useNavigate } from "react-router-dom";
 import { LogoBlock } from "@/components";
+import styles from "./SomoAdminLogin.module.css";
 
 const SomoAdminLogin = () => {
   const navigate = useNavigate();

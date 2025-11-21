@@ -51,7 +51,7 @@ const SomoSignup = () => {
           className={styles.input}
           value={form.email}
           onChange={(e) => update("email", e.target.value)}
-          placeholder="you@school.org"
+          placeholder="admin@school.org"
         />
 
         <label className={styles.label}>School name</label>
@@ -76,8 +76,14 @@ const SomoSignup = () => {
           onChange={(e) => update("password", e.target.value)}
         />
         <div className={styles.hint}>
-          Password must be 8+ chars, include uppercase, lowercase, number and
-          special char.
+          <p>Password must include:</p>
+          <ul>
+            <li>At least 8 characters</li>
+            <li>Uppercase letter</li>
+            <li>Lowercase letter</li>
+            <li>Number</li>
+            <li>Special character</li>
+          </ul>
         </div>
 
         <label className={styles.label}>Confirm password</label>
@@ -91,6 +97,11 @@ const SomoSignup = () => {
         <button className={styles.primary} type="submit" disabled={sendingOtp}>
           {sendingOtp ? "Sending OTP..." : "Create account"}
         </button>
+
+        <div className={styles.loginLink}>
+          Already have an account?{" "}
+          <span onClick={() => navigate("/somo/login")}>Login</span>
+        </div>
       </form>
     </div>
   );
