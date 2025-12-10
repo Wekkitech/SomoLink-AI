@@ -40,22 +40,51 @@
 .bottomRow {
   margin-top: 1.2rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.logoutBtn,
+.exportBtn {
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.3rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
 }
 
 .logoutBtn {
   background: #f97373;
   color: white;
-  border-radius: 999px;
-  padding: 0.5rem 1.3rem;
-  font-weight: 600;
 }
 
 .exportBtn {
   background: #71e675;
   color: #103810;
-  border-radius: 999px;
-  padding: 0.5rem 1.5rem;
-  font-weight: 600;
+}
+
+@media screen and (min-width: 600px) {
+  .schoolCard {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .bottomRow {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 0.8rem;
+  }
+
+  .logoutBtn,
+  .exportBtn {
+    width: auto;
+    min-width: 140px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .content {
+    margin-top: 1.4rem;
+  }
 }

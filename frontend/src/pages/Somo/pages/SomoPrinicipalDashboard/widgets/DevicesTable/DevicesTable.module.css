@@ -1,25 +1,25 @@
 .tableWrapper {
-  margin-top: 0.8rem;
-  background: #f4fff4;
-  border-radius: 14px;
-  padding: 0.9rem 1rem;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-
+  width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  background: #f4fff4;
+  border-radius: 14px;
+  padding: 0.75rem 0.65rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 
 .table {
-  min-width: 640px;
   width: 100%;
+  min-width: 580px; /* keeps columns readable on small phones */
   border-collapse: collapse;
   font-size: 0.85rem;
 }
 
 th,
 td {
-  padding: 0.6rem 0.5rem;
+  padding: 0.55rem 0.45rem;
   text-align: left;
+  white-space: nowrap;
 }
 
 th {
@@ -50,20 +50,48 @@ tr + tr td {
   border-radius: 999px;
   border: 1px solid #ef4444;
   color: #b91c1c;
-  padding: 0.3rem 0.7rem;
+  padding: 0.32rem 0.75rem;
   font-size: 0.8rem;
   cursor: pointer;
 }
 
 .empty {
   text-align: center;
-  padding: 0.8rem;
+  padding: 0.9rem;
   color: #555;
 }
 
-@media (min-width: 960px) {
+/* ===== Tablet (≥ 600px) ===== */
+@media screen and (min-width: 600px) {
   .tableWrapper {
+    padding: 1rem;
+  }
+
+  .table {
+    font-size: 0.9rem;
+    min-width: 620px;
+  }
+
+  th,
+  td {
+    padding: 0.65rem 0.55rem;
+  }
+}
+
+/* ===== Small laptops (≥ 960px) ===== */
+@media screen and (min-width: 960px) {
+  .tableWrapper {
+    padding: 1.2rem 1.4rem;
     margin-top: 1rem;
-    padding: 1.1rem 1.4rem;
+  }
+
+  .table {
+    min-width: 900px;
+    font-size: 0.95rem;
+  }
+
+  th,
+  td {
+    padding: 0.75rem 0.65rem;
   }
 }

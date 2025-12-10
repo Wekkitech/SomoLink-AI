@@ -84,11 +84,11 @@ const SomoPrincipalDashboard = () => {
 
   return (
     <div className="page-somo">
-      <div className={`page-container ${styles.wrapper}`}>
+      <div className={`page-content ${styles.wrapper}`}>
         <div className={styles.schoolCard}>
           <LogoBlock
             theme="somo"
-            title={`Welcome to SomoLink`}
+            title="Welcome to SomoLink"
             text="Free Education Access to all Students"
           />
           <h2 className={styles.schoolName}>School A Primary School</h2>
