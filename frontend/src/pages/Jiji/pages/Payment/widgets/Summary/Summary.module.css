@@ -1,0 +1,132 @@
+.card {
+  width: 100%;
+  border-radius: 20px;
+  padding: 1.5rem 1.4rem;
+  background: linear-gradient(180deg, #eff4ff 0%, #b4c7e3 100%);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.summaryList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.row span:first-child {
+  color: #4b5563;
+}
+
+.strong {
+  font-weight: 700;
+}
+
+.icons {
+  display: inline-flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.icons img {
+  width: 28px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.footer {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chooseLabel {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.dotsRow {
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(55, 65, 81, 0.3);
+  cursor: pointer;
+}
+
+.dotActive {
+  width: 18px;
+  background: #1d4ed8;
+}
+
+.actionsRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.cancelBtn {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: #e5e7eb;
+  color: #111827;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.payBtn {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: #1d4ed8;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 481px) {
+  .card {
+    padding: 1.7rem 1.6rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}

@@ -19,21 +19,39 @@ const JijiSignup = () => {
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState("");
 
-  function update(k, v) {
-    setForm((prev) => ({ ...prev, [k]: v }));
+  function update(key, value) {
+    setForm((prev) => ({ ...prev, [key]: value }));
+
+    // auto clear error for that field once user types
+    setErrors((prev) => ({ ...prev, [key]: "" }));
+  }
+
+  function validateFields() {
+    const newErr = {};
+
+    if (!form.firstName.trim()) newErr.firstName = "First name is required";
+    if (!form.lastName.trim()) newErr.lastName = "Last name is required";
+
+    // Must be Kenyan format +2547XXXXXXXX
+    if (!/^\+2547\d{8}$/.test(form.phone)) {
+      newErr.phone = "Enter a valid phone like +2547XXXXXXXX";
+    }
+
+    const passErr = validatePassword(form.password);
+    if (passErr) newErr.password = passErr;
+
+    if (form.password !== form.confirm) {
+      newErr.confirm = "Passwords do not match";
+    }
+
+    setErrors(newErr);
+    return Object.keys(newErr).length === 0;
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const passErr = validatePassword(form.password);
-    if (passErr) {
-      setErrors({ password: passErr });
-      return;
-    }
-    if (form.password !== form.confirm) {
-      setErrors({ confirm: "Passwords do not match" });
-      return;
-    }
+    if (!validateFields()) return;
+
     setLoading(true);
     try {
       const res = await jijiApi.signup({
@@ -42,11 +60,12 @@ const JijiSignup = () => {
         phone: form.phone,
         password: form.password,
       });
+
       if (res?.ok) {
         setToast("success");
         setTimeout(() => {
           setToast("");
-          navigate("/jiji");
+          navigate("/jiji/login");
         }, 900);
       } else {
         setToast("error");
@@ -61,61 +80,95 @@ const JijiSignup = () => {
   }
 
   return (
-    <div className={styles.wrapper}>
-      {toast === "success" && <SuccessToast message="Account created" />}
-      {toast === "error" && <ErrorToast message="Failed to create account" />}
+    <div className="page-jiji">
+      <div className={`page-content ${styles.wrapper}`}>
+        {toast === "success" && (
+          <SuccessToast message="Account created! Please log in." />
+        )}
+        {toast === "error" && (
+          <ErrorToast message="Signup failed. Check your details." />
+        )}
 
-      <div className={styles.headerRow}>
-        <LogoBlock text="Jiji Internet" />
-      </div>
-
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <label className={styles.label}>First name</label>
-        <input
-          className={styles.input}
-          value={form.firstName}
-          onChange={(e) => update("firstName", e.target.value)}
-        />
-
-        <label className={styles.label}>Last name</label>
-        <input
-          className={styles.input}
-          value={form.lastName}
-          onChange={(e) => update("lastName", e.target.value)}
-        />
-
-        <label className={styles.label}>Phone number</label>
-        <input
-          className={styles.input}
-          value={form.phone}
-          onChange={(e) => update("phone", e.target.value)}
-          placeholder="+2547..."
-        />
-
-        <label className={styles.label}>Password</label>
-        <input
-          type="password"
-          className={styles.input}
-          value={form.password}
-          onChange={(e) => update("password", e.target.value)}
-        />
-        <div className={styles.hint}>
-          Password must be 8+ chars, include uppercase, lowercase, number and
-          special char.
+        <div className={styles.headerRow}>
+          <LogoBlock
+            theme="jiji"
+            title="Jiji Internet"
+            text={`Providing Reliable Community Internet`}
+          />
+          <button
+            className={styles.topLink}
+            onClick={() => navigate("/jiji/login")}
+          >
+            Login
+          </button>
         </div>
 
-        <label className={styles.label}>Confirm password</label>
-        <input
-          type="password"
-          className={styles.input}
-          value={form.confirm}
-          onChange={(e) => update("confirm", e.target.value)}
-        />
+        <form className={styles.form} onSubmit={handleSubmit}>
+          {/* First name */}
+          <label className={styles.label}>First name</label>
+          <input
+            className={styles.input}
+            value={form.firstName}
+            onChange={(e) => update("firstName", e.target.value)}
+          />
+          {errors.firstName && (
+            <div className={styles.error}>{errors.firstName}</div>
+          )}
 
-        <button className={styles.primary} type="submit" disabled={loading}>
-          {loading ? "Creating..." : "Create account"}
-        </button>
-      </form>
+          {/* Last name */}
+          <label className={styles.label}>Last name</label>
+          <input
+            className={styles.input}
+            value={form.lastName}
+            onChange={(e) => update("lastName", e.target.value)}
+          />
+          {errors.lastName && (
+            <div className={styles.error}>{errors.lastName}</div>
+          )}
+
+          {/* Phone */}
+          <label className={styles.label}>Phone number</label>
+          <input
+            className={styles.input}
+            value={form.phone}
+            onChange={(e) => update("phone", e.target.value)}
+            placeholder="+2547XXXXXXXX"
+          />
+          {errors.phone && <div className={styles.error}>{errors.phone}</div>}
+
+          {/* Password */}
+          <label className={styles.label}>Password</label>
+          <input
+            type="password"
+            className={styles.input}
+            value={form.password}
+            onChange={(e) => update("password", e.target.value)}
+          />
+          <div className={styles.hint}>
+            Minimum 8 chars, includes upper, lower, number and special
+            character.
+          </div>
+          {errors.password && (
+            <div className={styles.error}>{errors.password}</div>
+          )}
+
+          {/* Confirm password */}
+          <label className={styles.label}>Confirm password</label>
+          <input
+            type="password"
+            className={styles.input}
+            value={form.confirm}
+            onChange={(e) => update("confirm", e.target.value)}
+          />
+          {errors.confirm && (
+            <div className={styles.error}>{errors.confirm}</div>
+          )}
+
+          <button className={styles.primary} type="submit" disabled={loading}>
+            {loading ? "Creating..." : "Create account"}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

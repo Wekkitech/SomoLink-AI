@@ -40,7 +40,7 @@ const SomoSignup = () => {
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`page-somo ${styles.wrapper}`}>
       <div className={styles.headerRow}>
         <h2>Create Admin Account</h2>
       </div>

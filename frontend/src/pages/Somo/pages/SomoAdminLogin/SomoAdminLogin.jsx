@@ -26,51 +26,56 @@ const SomoAdminLogin = () => {
   }
 
   return (
-    <div className={styles.wrapper}>
-      {toast === "success" && <SuccessToast message="Welcome" />}
-      {toast === "error" && <ErrorToast message="Please fill all fields" />}
-
-      <div className={styles.headerRow}>
-        <LogoBlock text="Free Education Access to all Students" />
-        <button
+    <div className="page-somo">
+      <div className={`page-content ${styles.wrapper}`}>
+        {" "}
+        {toast === "success" && <SuccessToast message="Welcome" />}
+        {toast === "error" && <ErrorToast message="Please fill all fields" />}
+        <div className={styles.headerRow}>
+          <LogoBlock
+            theme="somo"
+            title={`Welcome to SomoLink`}
+            text="Free Education Access to all Students"
+          />
+          {/* <button
           className={styles.topLink}
           onClick={() => navigate("/somo/signup")}
         >
           Sign Up
-        </button>
-      </div>
-
-      <form className={styles.form} onSubmit={handleLogin}>
-        <label className={styles.label}>School ID</label>
-        <input
-          value={schoolId}
-          onChange={(e) => setSchoolId(e.target.value)}
-          className={styles.input}
-          placeholder="School ID"
-        />
-
-        <label className={styles.label}>Password</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className={styles.input}
-          placeholder="Password"
-        />
-
-        <div className={styles.row}>
-          <button type="submit" className={styles.primary}>
-            Login
-          </button>
-          <button
-            type="button"
-            className={styles.link}
-            onClick={() => navigate("/somo/forgot")}
-          >
-            Forgot Password?
-          </button>
+        </button> */}
         </div>
-      </form>
+        <form className={styles.form} onSubmit={handleLogin}>
+          <label className={styles.label}>School ID</label>
+          <input
+            value={schoolId}
+            onChange={(e) => setSchoolId(e.target.value)}
+            className={styles.input}
+            placeholder="School ID"
+          />
+
+          <label className={styles.label}>Password</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className={styles.input}
+            placeholder="Password"
+          />
+
+          <div className={styles.row}>
+            <button type="submit" className={styles.primary}>
+              Login
+            </button>
+            <button
+              type="button"
+              className={styles.link}
+              onClick={() => navigate("/somo/forgot")}
+            >
+              Forgot Password?
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

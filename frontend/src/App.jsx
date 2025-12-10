@@ -10,10 +10,19 @@ import {
 import { Splash, Somo, Jiji } from "@/pages";
 
 // Somo Pages
-import { SomoAdminLogin, SomoSignup } from "@/pages/Somo/pages";
+import {
+  SomoAdminLogin,
+  SomoSignup,
+  SomoPrincipalDashboard,
+} from "@/pages/Somo/pages";
 
 // Jiji Pages
-import { JijiLogin, JijiSignup, Payment } from "@/pages/Jiji/pages";
+import {
+  JijiLogin,
+  JijiSignup,
+  Payment,
+  ActiveSession,
+} from "@/pages/Jiji/pages";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,7 +38,8 @@ const router = createBrowserRouter(
         <Route path="login" element={<SomoAdminLogin />} />
 
         {/* Admin signup */}
-        <Route path="signup" element={<SomoSignup />} />
+        {/* <Route path="signup" element={<SomoSignup />} /> */}
+        <Route path="dashboard" element={<SomoPrincipalDashboard />} />
       </Route>
 
       {/* Jiji Pages */}
@@ -38,6 +48,7 @@ const router = createBrowserRouter(
         <Route path="login" element={<JijiLogin />} />
         <Route path="signup" element={<JijiSignup />} />
         <Route path="payment/:packageId" element={<Payment />} />
+        <Route path="active" element={<ActiveSession />} />
       </Route>
     </>
   )

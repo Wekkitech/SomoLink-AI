@@ -17,6 +17,7 @@ const Somo = () => {
       </button>
 
       <LogoBlock
+        theme="somo"
         title="Welcome to SomoLink"
         text="Free Education Access to all Students"
       />

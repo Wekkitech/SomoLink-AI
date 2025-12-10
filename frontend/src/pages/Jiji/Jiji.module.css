@@ -1,77 +1,184 @@
 .wrapper {
-  padding: 1.25rem;
-  max-width: 980px;
-  margin: 0 auto;
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .headerRow {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 .topLink {
+  align-self: flex-end;
   background: transparent;
   border: none;
   color: #1d4ed8;
-  cursor: pointer;
+  font-size: 0.95rem;
   font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 0.25rem 0.4rem;
+  border-radius: 999px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: 1fr;
+  gap: 1.1rem;
   margin-top: 1.5rem;
 }
 
 .card {
   background: #b4c7e3;
-  padding: 1.4rem;
+  padding: 1.2rem;
   border-radius: 16px;
   cursor: pointer;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 0.5rem;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+  background: #a9bbd8;
+}
+
+.card:active {
+  transform: translateY(-2px) scale(0.98);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+}
+
+.card:focus {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 4px;
+}
+
+.card:hover .priceRow,
+.card:hover .title {
+  color: #103040;
+}
+
+.card:hover img {
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.15));
 }
 
 .title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
 }
 
 .priceRow {
-  margin-top: 0.7rem;
+  margin-top: 0.5rem;
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
 .coin {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: #444;
 }
 
 .price {
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 600;
 }
 
 .desc {
   color: #333;
-  margin-top: 0.4rem;
+  margin-top: 0.3rem;
   font-size: 0.9rem;
 }
 
 .payIconsRow {
   display: flex;
   gap: 6px;
-  margin-top: 1.2rem;
+  margin-top: 0.9rem;
 }
 
 .payIconsRow img {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   object-fit: contain;
+}
+
+/* Tablets (481px – 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .headerRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .topLink {
+    align-self: center;
+    padding-inline: 0.6rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+
+  .card {
+    padding: 1.3rem;
+  }
+}
+
+/* Small laptops (769px – 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .headerRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.4rem;
+  }
+
+  .card {
+    padding: 1.4rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .price {
+    font-size: 1.05rem;
+  }
+}
+
+/* Desktops (1025px – 1440px) */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+/* Large desktops (1441px and above) */
+@media screen and (min-width: 1441px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.6rem;
+  }
+
+  .card {
+    padding: 1.6rem;
+  }
 }

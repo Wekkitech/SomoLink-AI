@@ -10,7 +10,6 @@
   gap: 1rem;
 }
 
-
 .topLink {
   background: transparent;
   border: none;
@@ -37,9 +36,9 @@
   background: #fff;
 }
 .primary {
-  background: #4b8df8;
+  background: rgba(124, 188, 129, 1);
   color: white;
-  padding: 0.8rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 10px;
   border: none;
   font-weight: 600;

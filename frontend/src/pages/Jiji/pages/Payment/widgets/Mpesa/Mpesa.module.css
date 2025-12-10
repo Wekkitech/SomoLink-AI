@@ -1,0 +1,66 @@
+.card {
+  min-width: 82vw;
+  max-width: 420px;
+  border-radius: 22px;
+  padding: 1.1rem 1.1rem 1.2rem;
+  background: linear-gradient(180deg, #e5f7ee 0%, #b4c7e3 100%);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  cursor: pointer;
+}
+
+.active {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.header img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 0.88rem;
+  color: #4b5563;
+}
+
+.fieldBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.fieldBlock label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.fieldBlock input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+  background: #ffffff;
+}
+
+@media screen and (min-width: 481px) {
+  .card {
+    min-width: 360px;
+  }
+}

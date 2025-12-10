@@ -1,8 +1,17 @@
 .wrapper {
-  padding: 1.25rem;
-  max-width: 480px;
-  margin: 0 auto;
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
 }
+
+.headerRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -28,17 +37,19 @@
   border: 1px solid #f0f0f0;
 }
 .primary {
-  background: #16a34a;
-  color: #fff;
+  background: rgba(180, 199, 227, 1);
   border: none;
   padding: 0.8rem;
   border-radius: 10px;
   font-weight: 600;
   margin-top: 0.5rem;
 }
-.headerRow {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
+
+.topLink {
+  background: transparent;
+  border: none;
+  color: #1d4ed8;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
 }

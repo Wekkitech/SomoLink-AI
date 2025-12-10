@@ -1,0 +1,61 @@
+.wrapper {
+}
+
+.schoolCard {
+  width: 100%;
+  background: linear-gradient(180deg, #c6f6c8 0%, #95e59b 100%);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.schoolName {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.role {
+  font-size: 0.95rem;
+  color: #143514;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.content {
+  margin-top: 1.2rem;
+}
+
+.connectedText {
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.bottomRow {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoutBtn {
+  background: #f97373;
+  color: white;
+  border-radius: 999px;
+  padding: 0.5rem 1.3rem;
+  font-weight: 600;
+}
+
+.exportBtn {
+  background: #71e675;
+  color: #103810;
+  border-radius: 999px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+}

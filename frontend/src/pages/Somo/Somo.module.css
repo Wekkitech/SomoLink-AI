@@ -14,6 +14,7 @@
     url("/bg-pattern-light.png");
   background-size: cover;
   background-position: center;
+  background: linear-gradient(180deg, #ffffff 0%, #95e59b 100%);
 }
 
 .adminLogin {

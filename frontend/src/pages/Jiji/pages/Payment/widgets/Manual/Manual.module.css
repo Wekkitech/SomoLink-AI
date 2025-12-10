@@ -1,0 +1,84 @@
+.card {
+  min-width: 82vw;
+  max-width: 420px;
+  border-radius: 22px;
+  padding: 1.1rem 1.1rem 1.2rem;
+  background: linear-gradient(180deg, #eef2ff 0%, #b4c7e3 100%);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  cursor: pointer;
+}
+
+.active {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.iconBox {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  font-size: 1rem;
+}
+
+.header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 0.86rem;
+  color: #4b5563;
+}
+
+.instructions {
+  font-size: 0.9rem;
+  color: #111827;
+}
+
+.actionsRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.1rem;
+}
+
+.secondaryBtn,
+.primaryBtn {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondaryBtn {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.primaryBtn {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 481px) {
+  .card {
+    min-width: 360px;
+  }
+}
