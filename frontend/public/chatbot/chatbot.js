@@ -1,6 +1,6 @@
 /* chatbot.js - moved out of html so CSP allows it */
 
-/* small helper to detect indexedDB availability */
+/* helper: detect indexedDB availability */
 function idbAvailable() {
   try {
     return !!window.indexedDB;
@@ -24,27 +24,45 @@ function idbAvailable() {
 
   let WEBHOOK_URL = null;
 
-  // Accept init from parent. In production verify e.origin before trusting data
+  /* ensure welcome only displays once */
+  let welcomeShown = false;
+
+  // Receive config from parent
   window.addEventListener("message", function (e) {
     const data = e.data || {};
     if (data && data.type === "APP_INIT") {
       if (data.webhook) WEBHOOK_URL = data.webhook;
       if (data.token) sessionStorage.setItem("SOMO_TOKEN", data.token);
-      // post debug back to parent so parent devtools can see it
+
+      // Debug log
       try {
         window.parent.postMessage(
-          { type: "CHAT_LOG", msg: "APP_INIT received" },
+          { type: "CHAT_LOG", msg: "APP_INIT received in iframe" },
           "*"
         );
       } catch (err) {}
+
+      // === SHOW CUSTOM WELCOME MESSAGE ===
+      if (!welcomeShown) {
+        welcomeShown = true;
+
+        const welcomeText =
+          "👋 Habari! I'm SomoBot, your bilingual assistant for SomoLink.\n\n" +
+          "I can help you with:\n" +
+          "• Internet packages and pricing\n" +
+          "• M-PESA payment instructions\n" +
+          "• Connectivity troubleshooting\n" +
+          "• Account registration\n\n" +
+          "How can I assist you today?";
+
+        addMessage(welcomeText, "bot");
+      }
     }
   });
 
   const hasIDB = idbAvailable();
   if (!hasIDB) {
-    console.warn(
-      "IndexedDB not available in this iframe. Falling back to memory only."
-    );
+    console.warn("IndexedDB not available. Using memory only.");
     try {
       window.parent.postMessage(
         { type: "CHAT_LOG", msg: "IDB unavailable in iframe" },
@@ -53,12 +71,13 @@ function idbAvailable() {
     } catch (err) {}
   }
 
-  // UI wiring
+  // Toggle open / close
   chatToggle?.addEventListener("click", () => {
     chatWindow.classList.toggle("open");
     const open = chatWindow.classList.contains("open");
     chatWindow.setAttribute("aria-hidden", !open);
     chatToggle.setAttribute("aria-expanded", open);
+
     if (!open) chatBadge.classList.remove("show");
   });
 
@@ -86,7 +105,7 @@ function idbAvailable() {
     if (!WEBHOOK_URL) {
       hideTypingIndicator();
       addMessage(
-        "Chatbot not configured. Please open the site from the main app.",
+        "Chatbot not configured. Please open from the main app.",
         "bot"
       );
       return;
@@ -108,8 +127,7 @@ function idbAvailable() {
 
       if (data && data.success !== false && data.response)
         addMessage(data.response, "bot");
-      else
-        addMessage("Sorry, I encountered an error. Please try again.", "bot");
+      else addMessage("Sorry, I encountered an error. Try again.", "bot");
     } catch (err) {
       console.error(err);
       hideTypingIndicator();
@@ -147,6 +165,7 @@ function idbAvailable() {
     msg.appendChild(avatar);
     msg.appendChild(content);
     chatMessages.appendChild(msg);
+
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
     if (!chatWindow.classList.contains("open") && sender === "bot")
@@ -170,6 +189,7 @@ function idbAvailable() {
     indicator.appendChild(avatar);
     indicator.appendChild(typingDiv);
     chatMessages.appendChild(indicator);
+
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
