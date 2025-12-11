@@ -23,6 +23,7 @@ import {
   Payment,
   ActiveSession,
 } from "@/pages/Jiji/pages";
+import { Chatbot } from "@/components";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -58,6 +59,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <Chatbot />
     </>
   );
 }
