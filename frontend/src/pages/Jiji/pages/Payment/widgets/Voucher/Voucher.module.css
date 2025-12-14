@@ -1,6 +1,6 @@
 .card {
-  min-width: 82vw;
-  max-width: 420px;
+  width: 100%;
+  max-width: none;
   border-radius: 22px;
   padding: 1.1rem 1.1rem 1.2rem;
   background: linear-gradient(180deg, #f4f7ff 0%, #b4c7e3 100%);
