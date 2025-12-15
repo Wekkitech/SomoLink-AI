@@ -5,7 +5,7 @@ import {
   DeviceSearchBar,
   DevicesTable,
 } from "@/pages/Somo/pages/SomoPrinicipalDashboard/widgets";
-import { LogoBlock } from "@/components";
+import { BackButton, LogoBlock } from "@/components";
 
 const mockDevices = [
   {
@@ -85,6 +85,7 @@ const SomoPrincipalDashboard = () => {
   return (
     <div className="page-somo">
       <div className={`page-content ${styles.wrapper}`}>
+        <BackButton to="/" label="Back to Home" />
         <div className={styles.schoolCard}>
           <LogoBlock
             theme="somo"
@@ -96,9 +97,12 @@ const SomoPrincipalDashboard = () => {
         </div>
 
         <div className={styles.content}>
-          <p className={styles.connectedText}>
-            Connected Devices: {filteredDevices.length}
-          </p>
+          <div className={styles.connectedBanner}>
+            <span className={styles.connectedLabel}>Connected Devices</span>
+            <span className={styles.connectedCount}>
+              {filteredDevices.length}
+            </span>
+          </div>
 
           <DeviceSearchBar
             value={search}

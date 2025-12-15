@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Jiji.module.css";
 import { FaCoins } from "react-icons/fa";
 import { PAYMENT_PACKAGES } from "@/pages/Jiji/pages/Payment/data/payment.config";
-import { LogoBlock } from "@/components";
+import { BackButton, LogoBlock } from "@/components";
 
 // turn the object into an array: [{id: 'p1', ...}, ...]
 
@@ -18,6 +18,7 @@ const Jiji = () => {
   return (
     <div className="page-jiji">
       <div className={`page-content ${styles.wrapper}`}>
+        <BackButton to="/" label="Back to Home" />
         <div className={styles.headerRow}>
           <LogoBlock
             theme="jiji"

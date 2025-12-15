@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { SuccessToast, ErrorToast } from "@/pages/Somo/components";
 import { useNavigate } from "react-router-dom";
-import { LogoBlock } from "@/components";
+import { BackButton, LogoBlock } from "@/components";
 import styles from "./SomoAdminLogin.module.css";
 
 const SomoAdminLogin = () => {
@@ -28,21 +28,16 @@ const SomoAdminLogin = () => {
   return (
     <div className="page-somo">
       <div className={`page-content ${styles.wrapper}`}>
-        {" "}
         {toast === "success" && <SuccessToast message="Welcome" />}
         {toast === "error" && <ErrorToast message="Please fill all fields" />}
+
+        <BackButton to="/somo" label="Back To Somo" />
         <div className={styles.headerRow}>
           <LogoBlock
             theme="somo"
             title={`Welcome to SomoLink`}
             text="Free Education Access to all Students"
           />
-          {/* <button
-          className={styles.topLink}
-          onClick={() => navigate("/somo/signup")}
-        >
-          Sign Up
-        </button> */}
         </div>
         <form className={styles.form} onSubmit={handleLogin}>
           <label className={styles.label}>School ID</label>

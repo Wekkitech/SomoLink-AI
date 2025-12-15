@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSms, FaPhone } from "react-icons/fa";
 import styles from "./JijiLogin.module.css";
-import { LogoBlock } from "@/components";
+import { BackButton, LogoBlock } from "@/components";
 import { SuccessToast, ErrorToast } from "@/pages/Somo/components";
 import * as jijiApi from "@/api/jiji/jiji";
 
@@ -199,6 +199,8 @@ const JijiLogin = () => {
         {toast === "error" && (
           <ErrorToast message={toastMsg || "Please check input"} />
         )}
+
+        <BackButton to="/jiji" label="Back To Jiji" />
 
         <div className={styles.headerRow}>
           <LogoBlock

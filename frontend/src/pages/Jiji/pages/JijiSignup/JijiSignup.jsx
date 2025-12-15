@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./JijiSignup.module.css";
-import { LogoBlock } from "@/components";
+import { BackButton, LogoBlock } from "@/components";
 import { SuccessToast, ErrorToast } from "@/pages/Somo/components";
 import { validatePassword } from "@/helpers/password";
 import * as jijiApi from "@/api/jiji/jiji";
@@ -88,6 +88,8 @@ const JijiSignup = () => {
         {toast === "error" && (
           <ErrorToast message="Signup failed. Check your details." />
         )}
+
+        <BackButton to="/jiji" label="Back To Jiji" />
 
         <div className={styles.headerRow}>
           <LogoBlock

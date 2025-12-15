@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Somo.module.css";
-import { LogoBlock } from "@/components";
+import { BackButton, LogoBlock } from "@/components";
 import { SchoolIdForm } from "@/pages/Somo/components";
 
 const Somo = () => {
@@ -9,6 +9,7 @@ const Somo = () => {
 
   return (
     <div className={styles.wrapper}>
+      <BackButton to="/" label="Back to Home" />
       <button
         className={styles.adminLogin}
         onClick={() => navigate("/somo/login")}
