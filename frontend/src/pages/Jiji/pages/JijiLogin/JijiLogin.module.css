@@ -15,11 +15,20 @@
 .topLink {
   background: transparent;
   border: none;
-  color: #214f6d;
+  color: rgba(255, 255, 255, 0.92);
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   padding: 0.25rem 0.4rem;
+  text-decoration: none;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.topLink:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
 .form {
@@ -73,18 +82,22 @@
 }
 
 .primary {
-  background: #214f6d;
+  background: linear-gradient(180deg, #2f6b8f 0%, #214f6d 55%, #183a51 100%);
   color: #ffffff;
-  padding: 0.8rem;
-  border-radius: 10px;
+  padding: 0.85rem;
+  border-radius: 12px;
   border: none;
   font-weight: 600;
   cursor: pointer;
   flex: 1;
+  box-shadow: 0 6px 18px rgba(24, 58, 81, 0.35);
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .primary:hover {
-  background: #1b415a;
+  background: linear-gradient(180deg, #285f80 0%, #1b415a 60%, #142f42 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(20, 47, 66, 0.45);
 }
 
 .link {
@@ -112,7 +125,7 @@
 }
 
 .orText {
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.85rem;
 }
 

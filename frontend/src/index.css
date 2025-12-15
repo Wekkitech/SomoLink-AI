@@ -111,9 +111,13 @@ button {
   --somo-orange-light: #e1ad72;
   --somo-orange-dark: #b87a3f;
 
+  /* --somo-blue-main: #214f6d; */
+  /* --somo-blue-light: #3b6c87; */
+  /* --somo-blue-dark: #183a51; */
+
+  --somo-blue-light: #2e617f;
   --somo-blue-main: #214f6d;
-  --somo-blue-light: #3b6c87;
-  --somo-blue-dark: #183a51;
+  --somo-blue-dark: #173e56;
 
   --grey-50: #f8fafc;
   --grey-100: #f1f5f9;
@@ -131,8 +135,6 @@ button {
   max-width: 420px;
   margin: 0 auto;
   padding: 1.25rem 1.2rem;
-  /* color: #0f172a; */
-  /* color: #ffff; */
 }
 
 .page-somo,
@@ -155,12 +157,14 @@ button {
 }
 
 .page-jiji {
+  min-height: 100vh;
+
   background: linear-gradient(
     180deg,
     #ffffff 0%,
-    var(--somo-blue-light) 60%,
-    var(--somo-blue-main) 95%,
-    var(--somo-blue-dark) 130%
+    var(--somo-blue-light) 65%,
+    var(--somo-blue-main) 85%,
+    var(--somo-blue-dark) 100%
   );
 }
 
