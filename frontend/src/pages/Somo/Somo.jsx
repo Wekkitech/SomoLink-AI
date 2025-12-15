@@ -8,22 +8,24 @@ const Somo = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={styles.wrapper}>
-      <BackButton to="/" label="Back to Home" />
-      <button
-        className={styles.adminLogin}
-        onClick={() => navigate("/somo/login")}
-      >
-        Admin Login
-      </button>
+    <div className="page-somo">
+      <div className={`page-content ${styles.wrapper}`}>
+        <BackButton to="/" label="Back to Home" />
+        <button
+          className={styles.adminLogin}
+          onClick={() => navigate("/somo/login")}
+        >
+          Admin Login
+        </button>
 
-      <LogoBlock
-        theme="somo"
-        title="Welcome to SomoLink"
-        text="Free Education Access to all Students"
-      />
+        <LogoBlock
+          theme="somo"
+          title="Welcome to SomoLink"
+          text="Free Education Access to all Students"
+        />
 
-      <SchoolIdForm />
+        <SchoolIdForm />
+      </div>{" "}
     </div>
   );
 };

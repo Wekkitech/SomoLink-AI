@@ -144,37 +144,34 @@ button {
   background-size: cover;
 }
 
-/* Somo: orange only, tight range */
 .page-somo {
   background: linear-gradient(
     180deg,
     #ffffff 0%,
-    var(--somo-orange-light) 40%,
-    var(--somo-orange-main) 80%,
-    var(--somo-orange-dark) 100%
+    var(--somo-orange-light) 60%,
+    var(--somo-orange-main) 70%,
+    var(--somo-orange-dark) 110%
   );
 }
 
-/* Jiji: blue only, tight range */
 .page-jiji {
   background: linear-gradient(
     180deg,
     #ffffff 0%,
-    var(--somo-blue-light) 45%,
-    var(--somo-blue-main) 85%,
-    var(--somo-blue-dark) 100%
+    var(--somo-blue-light) 60%,
+    var(--somo-blue-main) 95%,
+    var(--somo-blue-dark) 130%
   );
 }
 
-/* Splash: real blend of the two exact colors */
 .page-splash {
   background: linear-gradient(
     180deg,
     #ffffff 0%,
-    var(--somo-orange-light) 30%,
-    var(--somo-orange-main) 45%,
-    var(--somo-blue-light) 65%,
-    var(--somo-blue-main) 100%
+    var(--somo-orange-light) 40%,
+    var(--somo-orange-main) 55%,
+    var(--somo-blue-light) 85%,
+    var(--somo-blue-main) 110%
   );
 }
 
