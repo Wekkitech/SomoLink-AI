@@ -16,13 +16,17 @@
   align-self: flex-end;
   background: transparent;
   border: none;
-  color: #1d4ed8;
+  color: #ffffffbb;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
   padding: 0.25rem 0.4rem;
   border-radius: 999px;
+}
+
+.topLink:hover {
+  color: #ffffff82;
 }
 
 .grid {
@@ -33,11 +37,11 @@
 }
 
 .card {
-  background: #b4c7e3;
+  background: #e6eef3;
   padding: 1.2rem;
   border-radius: 16px;
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 16px rgba(33, 79, 109, 0.18);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -47,32 +51,30 @@
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
-  background: #a9bbd8;
+  box-shadow: 0 12px 24px rgba(33, 79, 109, 0.28);
+  background: #dbe7ed;
 }
 
 .card:active {
   transform: translateY(-2px) scale(0.98);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 6px 18px rgba(33, 79, 109, 0.22);
 }
 
 .card:focus {
-  outline: 2px solid #1d4ed8;
+  outline: 2px solid #214f6d;
   outline-offset: 4px;
 }
 
-.card:hover .priceRow,
-.card:hover .title {
-  color: #103040;
-}
-
-.card:hover img {
-  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.15));
+.card:hover .title,
+.card:hover .price,
+.card:hover .coin {
+  color: #1b415a;
 }
 
 .title {
   font-size: 1.1rem;
   font-weight: 700;
+  color: #214f6d;
 }
 
 .priceRow {
@@ -84,16 +86,17 @@
 
 .coin {
   font-size: 1.15rem;
-  color: #444;
+  color: #214f6d;
 }
 
 .price {
   font-size: 0.98rem;
   font-weight: 600;
+  color: #214f6d;
 }
 
 .desc {
-  color: #333;
+  color: #334155;
   margin-top: 0.3rem;
   font-size: 0.9rem;
 }
@@ -110,7 +113,6 @@
   object-fit: contain;
 }
 
-/* Tablets (481px – 768px) */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .headerRow {
     flex-direction: row;
@@ -133,7 +135,6 @@
   }
 }
 
-/* Small laptops (769px – 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .headerRow {
     flex-direction: row;
@@ -159,7 +160,6 @@
   }
 }
 
-/* Desktops (1025px – 1440px) */
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -171,7 +171,6 @@
   }
 }
 
-/* Large desktops (1441px and above) */
 @media screen and (min-width: 1441px) {
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));

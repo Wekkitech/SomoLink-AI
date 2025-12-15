@@ -3,20 +3,16 @@
   max-width: 100vw;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-
-  background: #f4fff4;
+  background: #f3e2cf;
   border-radius: 12px;
   padding: 0.6rem 0.55rem;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 
-/* ===== Mobile first table ===== */
 .table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.8rem;
-
-  /* allow horizontal scroll instead of squeezing */
   min-width: 640px;
 }
 
@@ -29,12 +25,12 @@ td {
 
 th {
   font-weight: 600;
-  background: #f4fff4;
+  background: #f3e2cf;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-
   position: sticky;
   top: 0;
   z-index: 2;
+  color: #214f6d;
 }
 
 tr + tr td {
@@ -42,35 +38,38 @@ tr + tr td {
 }
 
 .online {
-  color: #15803d;
+  color: var(--success);
   font-weight: 600;
 }
 
 .offline {
-  color: #b91c1c;
+  color: var(--danger);
   font-weight: 600;
 }
 
 .disconnectBtn {
   background: transparent;
-  border: 1px solid #ef4444;
+  border: 1px solid #214f6d;
   border-radius: 999px;
-  color: #b91c1c;
+  color: #214f6d;
   padding: 0.28rem 0.7rem;
   font-size: 0.75rem;
   cursor: pointer;
 }
 
+.disconnectBtn:hover {
+  background: rgba(33, 79, 109, 0.08);
+}
+
 .empty {
   text-align: center;
   padding: 0.8rem;
-  color: #555;
+  color: #475569;
 }
 
-/* ===== Tablet and small screens up ===== */
 @media (min-width: 600px) {
   .tableWrapper {
-    padding: 0.9rem 0.9rem;
+    padding: 0.9rem;
   }
 
   .table {
@@ -89,7 +88,6 @@ tr + tr td {
   }
 }
 
-/* ===== Laptop and desktop ===== */
 @media (min-width: 960px) {
   .tableWrapper {
     padding: 1.2rem 1.4rem;

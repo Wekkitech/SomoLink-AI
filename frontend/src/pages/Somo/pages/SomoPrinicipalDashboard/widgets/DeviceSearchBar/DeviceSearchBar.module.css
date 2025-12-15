@@ -17,7 +17,7 @@
 
 .icon {
   font-size: 1rem;
-  color: #4caf50;
+  color: #214f6d;
   margin-right: 0.5rem;
 }
 
@@ -26,13 +26,20 @@
   border: none;
   outline: none;
   font-size: 0.95rem;
+  color: #1f2937;
 }
 
 .filterBtn {
-  background: #71e675;
-  color: #123213;
+  background: #d79553;
+  color: #1f2937;
   border-radius: 999px;
   padding: 0.5rem 0.9rem;
   font-size: 0.9rem;
   font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.filterBtn:hover {
+  background: #c4823f;
 }

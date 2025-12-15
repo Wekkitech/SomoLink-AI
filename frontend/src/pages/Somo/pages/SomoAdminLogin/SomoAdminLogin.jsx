@@ -17,11 +17,10 @@ const SomoAdminLogin = () => {
       setTimeout(() => setToast(""), 2600);
       return;
     }
-    // call your API: await api.somo.login({schoolId, password})
     setToast("success");
     setTimeout(() => {
       setToast("");
-      navigate("/somo/dashboard"); // change to real path
+      navigate("/somo/dashboard");
     }, 1200);
   }
 
@@ -32,13 +31,15 @@ const SomoAdminLogin = () => {
         {toast === "error" && <ErrorToast message="Please fill all fields" />}
 
         <BackButton to="/somo" label="Back To Somo" />
+
         <div className={styles.headerRow}>
           <LogoBlock
             theme="somo"
-            title={`Welcome to SomoLink`}
+            title="Welcome to SomoLink"
             text="Free Education Access to all Students"
           />
         </div>
+
         <form className={styles.form} onSubmit={handleLogin}>
           <label className={styles.label}>School ID</label>
           <input

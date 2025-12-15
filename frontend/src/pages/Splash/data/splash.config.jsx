@@ -1,12 +1,12 @@
 export const portalButtons = [
   {
-    bgColor: "#71E675",
+    bgColor: "#d79553",
     title: "Somo",
     description: "Free educational access",
     path: "/somo",
   },
   {
-    bgColor: "#3498db",
+    bgColor: "#214f6d",
     title: "Jiji",
     description: "Pay as you go internet",
     path: "/jiji",

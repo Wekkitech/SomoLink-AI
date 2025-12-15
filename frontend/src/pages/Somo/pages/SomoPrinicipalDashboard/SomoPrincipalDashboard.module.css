@@ -7,11 +7,10 @@
 
 .schoolCard {
   width: 100%;
-  background: linear-gradient(180deg, #c6f6c8 0%, #95e59b 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f3e2cf 40%, #d79553 100%);
   border-radius: 12px;
-  padding: 1rem 1rem;
+  padding: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,11 +22,12 @@
   font-weight: 700;
   margin-top: 0.55rem;
   margin-bottom: 0.25rem;
+  color: #214f6d;
 }
 
 .role {
   font-size: 0.9rem;
-  color: #143514;
+  color: #214f6d;
   font-weight: 600;
   margin-bottom: 0.35rem;
 }
@@ -42,11 +42,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0.65rem 0.8rem;
   margin-bottom: 0.75rem;
-
-  background: #ecfdf0;
+  background: #f3e2cf;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
@@ -54,15 +52,14 @@
 .connectedLabel {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #14532d;
+  color: #214f6d;
 }
 
 .connectedCount {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #166534;
-
-  background: #bbf7d0;
+  color: #214f6d;
+  background: #e7caa5;
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
 }
@@ -86,19 +83,26 @@
 }
 
 .logoutBtn {
-  background: #f97373;
-  color: white;
+  background: #214f6d;
+  color: #ffffff;
+}
+
+.logoutBtn:hover {
+  background: #1b415a;
 }
 
 .exportBtn {
-  background: #71e675;
-  color: #103810;
+  background: #d79553;
+  color: #1f2937;
 }
 
-/* ===== Tablet and up ===== */
+.exportBtn:hover {
+  background: #c4823f;
+}
+
 @media (min-width: 600px) {
   .wrapper {
-    padding: 1.2rem 1.2rem;
+    padding: 1.2rem;
   }
 
   .schoolCard {
@@ -134,7 +138,6 @@
   }
 }
 
-/* ===== Laptop and desktop ===== */
 @media (min-width: 960px) {
   .wrapper {
     max-width: 1100px;

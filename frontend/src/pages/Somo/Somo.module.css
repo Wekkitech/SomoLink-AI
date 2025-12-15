@@ -7,14 +7,6 @@
   flex-direction: column;
   align-items: center;
   padding: 2rem 1rem;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.92),
-      rgba(255, 255, 255, 0.92)
-    ),
-    url("/bg-pattern-light.png");
-  background-size: cover;
-  background-position: center;
-  background: linear-gradient(180deg, #ffffff 0%, #95e59b 100%);
 }
 
 .adminLogin {

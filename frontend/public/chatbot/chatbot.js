@@ -85,6 +85,8 @@ function idbAvailable() {
     chatWindow.classList.remove("open");
     chatWindow.setAttribute("aria-hidden", "true");
     chatToggle.setAttribute("aria-expanded", "false");
+
+    window.parent.postMessage({ type: "CHAT_CLOSE" }, "*");
   });
 
   chatSend?.addEventListener("click", sendMessage);

@@ -8,7 +8,7 @@
 .label {
   font-size: 1rem;
   font-weight: 500;
-  color: #333;
+  color: #214f6d;
 }
 
 .inputWrapper {
@@ -16,21 +16,27 @@
   display: flex;
   align-items: center;
   padding: 0.6rem 1rem;
-  border: 1px solid #bcbcbc;
+  border: 1px solid #d6c2ab;
   border-radius: 20px;
-  background: white;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputWrapper:focus-within {
+  border-color: #d79553;
+  box-shadow: 0 0 0 3px rgba(215, 149, 83, 0.25);
 }
 
 .iconArea {
   font-size: 2.2rem;
-  color: #4e4e4e;
+  color: #d79553;
   margin-right: 0.6rem;
 }
 
 .divider {
   width: 1px;
   height: 22px;
-  background: #cfcfcf;
+  background: #e2c8aa;
   margin-right: 0.6rem;
 }
 
@@ -39,15 +45,25 @@
   border: none;
   outline: none;
   font-size: 1rem;
+  color: #1f2937;
 }
 
 .connectBtn {
-  background: #71e675;
+  background: #d79553;
   border: none;
-  padding: 0.7rem 2rem;
+  padding: 0.7rem 2.2rem;
   border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
-  color: white;
+  color: #1f2937;
   font-size: 1rem;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.connectBtn:hover {
+  background: #c4823f;
+}
+
+.connectBtn:active {
+  transform: scale(0.97);
 }
