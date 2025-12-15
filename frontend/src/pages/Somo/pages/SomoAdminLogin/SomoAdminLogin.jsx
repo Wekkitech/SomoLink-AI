@@ -2,21 +2,26 @@ import React, { useState } from "react";
 import { SuccessToast, ErrorToast } from "@/pages/Somo/components";
 import { useNavigate } from "react-router-dom";
 import { BackButton, LogoBlock } from "@/components";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import styles from "./SomoAdminLogin.module.css";
 
 const SomoAdminLogin = () => {
   const navigate = useNavigate();
+
   const [schoolId, setSchoolId] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [toast, setToast] = useState("");
 
   async function handleLogin(e) {
     e.preventDefault();
+
     if (!schoolId || !password) {
       setToast("error");
       setTimeout(() => setToast(""), 2600);
       return;
     }
+
     setToast("success");
     setTimeout(() => {
       setToast("");
@@ -50,18 +55,31 @@ const SomoAdminLogin = () => {
           />
 
           <label className={styles.label}>Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className={styles.input}
-            placeholder="Password"
-          />
+
+          <div className={styles.inputWrapper}>
+            <input
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className={styles.input}
+              placeholder="Password"
+            />
+
+            <button
+              type="button"
+              className={styles.eyeBtn}
+              onClick={() => setShowPassword((v) => !v)}
+              aria-label="Toggle password visibility"
+            >
+              {showPassword ? <FiEye /> : <FiEyeOff />}
+            </button>
+          </div>
 
           <div className={styles.row}>
             <button type="submit" className={styles.primary}>
               Login
             </button>
+
             <button
               type="button"
               className={styles.link}
