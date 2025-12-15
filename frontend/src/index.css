@@ -111,18 +111,32 @@ button {
   cursor: pointer;
 }
 
-/* ===== Design tokens ===== */
 :root {
-  --brand-blue: rgb(32, 95, 255);
-  --brand-yellow: rgb(253, 203, 36);
-  --grey-50: rgb(248, 248, 248);
-  --grey-100: rgb(235, 235, 235);
-  --grey-200: rgb(220, 220, 220);
-  --grey-300: rgb(200, 200, 200);
-  --grey-600: rgb(100, 100, 100);
-  --success: rgb(34, 197, 94);
-  --warning: rgb(245, 158, 11);
-  --danger: rgb(239, 68, 68);
+  /* ===== Jiji brand (Blue) ===== */
+  --jiji-blue-dark: #1e3a8a;
+  --jiji-blue-main: #2563eb;
+  --jiji-blue-soft: #93c5fd;
+
+  /* ===== Somo brand (Orange + Blue) ===== */
+  --somo-orange-dark: #c2410c;
+  --somo-orange-main: #f97316;
+  --somo-orange-soft: #fed7aa;
+
+  --somo-blue-dark: #0f3d56;
+  --somo-blue-main: #1f6b8f;
+  --somo-blue-soft: #b6d9e8;
+
+  /* ===== Neutrals ===== */
+  --grey-50: #f8fafc;
+  --grey-100: #f1f5f9;
+  --grey-200: #e5e7eb;
+  --grey-300: #d1d5db;
+  --grey-600: #475569;
+
+  /* ===== States ===== */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
 }
 
 /* ===== Global content wrapper (mobile first) ===== */
@@ -133,26 +147,38 @@ button {
   padding: 1.25rem 1.2rem;
 }
 
-/* Page backgrounds */
 .page-somo,
 .page-jiji,
 .page-splash {
   min-height: 100vh;
   width: 100%;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .page-somo {
-  background: linear-gradient(180deg, #ffffff 0%, #95e59b 100%);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    var(--somo-orange-soft) 35%,
+    var(--somo-orange-main) 70%,
+    var(--somo-blue-main) 100%
+  );
 }
 
+/* ===== Jiji (Pure blue gradient) ===== */
 .page-jiji {
-  background: linear-gradient(180deg, #ffffff 0%, #438fff 100%);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    var(--jiji-blue-soft) 40%,
+    var(--jiji-blue-main) 100%
+  );
 }
 
+/* ===== Splash (Neutral tech feel) ===== */
 .page-splash {
-  background: linear-gradient(180deg, #ffffff 0%, #628594 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 50%, #94a3b8 100%);
 }
 
 /* ===== Extra small phones (up to about 360px wide) ===== */
