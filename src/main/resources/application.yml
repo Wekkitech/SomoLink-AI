@@ -3,6 +3,7 @@ server:
   port: 8990
 
 spring:
+
   application:
     name: somolink
 

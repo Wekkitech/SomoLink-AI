@@ -9,6 +9,25 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
+    # ✅ Inject all environment variables for Spring Boot prod profile
+    env:
+      SPRING_DATASOURCE_URL: ${{ secrets.SPRING_DATASOURCE_URL }}
+      SPRING_DATASOURCE_USERNAME: ${{ secrets.SPRING_DATASOURCE_USERNAME }}
+      SPRING_DATASOURCE_PASSWORD: ${{ secrets.SPRING_DATASOURCE_PASSWORD }}
+      APP_JWT_SECRET: ${{ secrets.APP_JWT_SECRET }}
+      APP_JWT_EXPIRATION: ${{ secrets.APP_JWT_EXPIRATION }}
+      APP_JWT_REFRESH_EXPIRATION: ${{ secrets.APP_JWT_REFRESH_EXPIRATION }}
+      MIKROTIK_HOST: ${{ secrets.MIKROTIK_HOST }}
+      MIKROTIK_PORT: ${{ secrets.MIKROTIK_PORT }}
+      MIKROTIK_USERNAME: ${{ secrets.MIKROTIK_USERNAME }}
+      MIKROTIK_PASSWORD: ${{ secrets.MIKROTIK_PASSWORD }}
+      MPESA_CONSUMER_KEY: ${{ secrets.MPESA_CONSUMER_KEY }}
+      MPESA_CONSUMER_SECRET: ${{ secrets.MPESA_CONSUMER_SECRET }}
+      MPESA_CONFIRMATION_URL: ${{ secrets.MPESA_CONFIRMATION_URL }}
+      MPESA_VALIDATION_URL: ${{ secrets.MPESA_VALIDATION_URL }}
+      MPESA_STK_PASSKEY: ${{ secrets.MPESA_STK_PASSKEY }}
+      MPESA_STK_CALLBACK_URL: ${{ secrets.MPESA_STK_CALLBACK_URL }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -22,8 +41,9 @@ jobs:
           distribution: temurin
           java-version: 17
 
+      # ✅ Build Spring Boot app using prod profile
       - name: Build Spring Boot application
-        run: ./mvnw clean package -B -DskipTests
+        run: ./mvnw clean package -B -DskipTests -Dspring.profiles.active=prod
 
       # 1️⃣ Remove old JAR on VM
       - name: Remove old backend JAR on VM
@@ -47,7 +67,7 @@ jobs:
           source: target/somolink-*.jar
           target: ${{ secrets.VM_BACKEND_PATH }}
 
-      # 3️⃣ Run deploy script
+      # 3️⃣ Run deploy script on VM
       - name: Run deploy script on VM
         uses: appleboy/ssh-action@v0.1.7
         with:

@@ -1,0 +1,55 @@
+server:
+  port: 8990
+
+spring:
+
+  config:
+    activate:
+      on-profile: prod
+
+
+  application:
+    name: somolink
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+app:
+  jwt:
+    secret: ${APP_JWT_SECRET}
+    expiration: ${APP_JWT_EXPIRATION}
+    refresh-expiration: ${APP_JWT_REFRESH_EXPIRATION}
+
+mikrotik:
+  host: ${MIKROTIK_HOST}
+  port: ${MIKROTIK_PORT}
+  username: ${MIKROTIK_USERNAME}
+  password: ${MIKROTIK_PASSWORD}
+  timeout: 5s
+
+mpesa:
+  daraja:
+    consumer-key: ${MPESA_CONSUMER_KEY}
+    consumer-secret: ${MPESA_CONSUMER_SECRET}
+    grant-type: client_credentials
+    oauth-endpoint: https://sandbox.safaricom.co.ke/oauth/v1/generate
+    shortCode: 600000
+    confirmationURL: ${MPESA_CONFIRMATION_URL}
+    validationURL: ${MPESA_VALIDATION_URL}
+    responseType: Completed
+    stkPassKey: ${MPESA_STK_PASSKEY}
+    stkPushShortCode: 174379
+    stkPushRequestUrl: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+    stkPushRequestCallbackUrl: ${MPESA_STK_CALLBACK_URL}
