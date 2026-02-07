@@ -34,6 +34,6 @@ build/
 
 
 # Spring Boot environment files
-!**/src/main/resources/application.yml
+./src/main/resources/application.yml
 application-dev.yml
 .env
