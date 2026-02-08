@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+.somolink-creative-loader {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spinner ring */
+.spinner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: spin 1.6s linear infinite;
+}
+
+.spinner circle {
+  fill: none;
+  stroke: #06b6d4;
+  stroke-width: 4;
+  stroke-dasharray: 210;
+  stroke-dashoffset: 60;
+}
+
+/* Book */
+.book {
+  position: relative;
+  width: 22px;
+  height: 16px;
+  display: flex;
+  z-index: 2;
+}
+
+.page {
+  width: 11px;
+  height: 16px;
+  background: #06b6d4;
+}
+
+.page.left {
+  border-radius: 3px 0 0 3px;
+  transform-origin: right;
+  animation: page-left 1.2s ease-in-out infinite;
+}
+
+.page.right {
+  border-radius: 0 3px 3px 0;
+  transform-origin: left;
+  animation: page-right 1.2s ease-in-out infinite;
+}
+
+
+
+.wifi span:nth-child(1) { animation-delay: 0s; }
+.wifi span:nth-child(2) { animation-delay: 0.2s; }
+.wifi span:nth-child(3) { animation-delay: 0.4s; }
+
+/* Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes page-left {
+  0%, 100% { transform: rotateY(0); }
+  50% { transform: rotateY(-30deg); }
+}
+
+@keyframes page-right {
+  0%, 100% { transform: rotateY(0); }
+  50% { transform: rotateY(30deg); }
+}
+
+@keyframes wifi-pulse {
+  0% { opacity: 0; transform: translateY(4px); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-2px); }
+}
+/* Spinner ring */
+.spinner circle {
+  fill: none;
+  stroke: #4f46e5; /* indigo-600 */
+  stroke-width: 4;
+  stroke-dasharray: 210;
+  stroke-dashoffset: 60;
+}
+
+/* Book pages */
+.page {
+  background: #4f46e5; /* indigo-600 */
+}
+
+/* WiFi signal */
+.wifi span {
+  border-top: 2px solid #4f46e5; /* indigo-600 */
+}
+.spinner circle {
+  opacity: 0.85;
+}
+
+.page {
+  box-shadow: 0 0 6px rgba(79, 70, 229, 0.35);
+}
